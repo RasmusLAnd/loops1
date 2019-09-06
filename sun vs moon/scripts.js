@@ -1,3 +1,4 @@
+
 // når click på måne, skift til img af sun
 
 let buttonElement = document.querySelector("#picture");
