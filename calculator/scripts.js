@@ -43,7 +43,6 @@ buttonElement.addEventListener("click", function(event){
         let tekst = document.createTextNode(udprint[i]);
         li.appendChild(tekst);
         ul.appendChild(li);
-        console.log(ul);
         document.querySelector(".body").appendChild(ul);
 }
 });
