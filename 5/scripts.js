@@ -32,8 +32,6 @@ function loadFromLocalStorage(){
     
 }
 
-
-
 buttonElement.addEventListener("click", function(event){
     event.preventDefault();
     let div = document.createElement("div");
