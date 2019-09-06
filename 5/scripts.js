@@ -9,9 +9,35 @@
 
 let buttonElement = document.querySelector("#ok");
 
+//kalder funktionen "load...localstorage"
+loadFromLocalStorage();
+
+function loadFromLocalStorage(){
+    if (localStorage != "" && localStorage.length > 0 ){
+        // tjek først om newdiv eksisterer, før du fjerner den.
+        if (document.querySelector(".newdiv")){
+            document.querySelector(".newdiv").remove();}
+        else{}
+
+        let old = document.createTextNode(localStorage.getItem("name"));
+        let element = document.createElement("div");
+        element.appendChild(old);
+        // console.log(element);
+        document.querySelector(".body").appendChild(element);
+       
+    } 
+    else {
+        console.log("LS er tom");
+    }
+    
+}
+
+
+
 buttonElement.addEventListener("click", function(event){
     event.preventDefault();
     let div = document.createElement("div");
+    div.className = "newdiv";
     let inputText = document.querySelector("#tekst").value;
     let textnode = document.createTextNode(inputText);
     console.log(typeof inputText);
@@ -31,6 +57,7 @@ buttonElement.addEventListener("click", function(event){
     let buttonElement2 = document.querySelector("#delKnap");
     buttonElement2.addEventListener("click",function(event){
         event.preventDefault();
+        document.querySelector(".newdiv").remove();
         localStorage.clear();
     });
 
